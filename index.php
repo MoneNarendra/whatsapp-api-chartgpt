@@ -23,7 +23,7 @@ $app->post('/send-whatsapp', function (Request $request, Response $response) {
     $message = $twilio->messages->create(
         "whatsapp:+91$mobile",
         [
-            'from' => 'whatsapp:+14155238886',
+            'from' => 'whatsapp:+14155238886', // Twilio Sandbox Number
             'body' => $msg
         ]
     );
