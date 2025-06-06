@@ -6,8 +6,8 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Twilio\Rest\Client;
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+//$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+//$dotenv->load();
 
 $app = AppFactory::create();
 
@@ -18,7 +18,7 @@ $app->post('/send-whatsapp', function (Request $request, Response $response) {
 
     $msg = "Hi $name 👋\nPlease reply with:\n1️⃣ Order Status\n2️⃣ Talk to Support";
 
-    $twilio = new Client($_ENV['TWILIO_SID'], $_ENV['TWILIO_TOKEN']);
+    $twilio = new Client("AC3266c90ede73e640d2d85260392c80d8", "5cc06d46345d0f3f77f5aaa039ca0688");
 
     $message = $twilio->messages->create(
         "whatsapp:+91$mobile",
